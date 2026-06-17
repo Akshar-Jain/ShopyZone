@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #020617;
+  --bg-card: rgba(15, 23, 42, 0.5);
+  --bg-card-solid: #090d1f;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-color-focus: rgba(6, 182, 212, 0.5);
+  --header-bg: rgba(2, 6, 23, 0.85);
+  --card-shadow: none;
+  --badge-bg: rgba(6, 182, 212, 0.1);
+  --badge-text: #22d3ee;
+}
+
+body.light-theme {
+  --bg-primary: #f3f4f6;
+  --bg-card: #ffffff;
+  --bg-card-solid: #ffffff;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --border-color: #e5e7eb;
+  --border-color-focus: #4f46e5;
+  --header-bg: rgba(255, 255, 255, 0.95);
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --badge-bg: #e0e7ff;
+  --badge-text: #4f46e5;
+}
+
+body {
+  margin: 0;
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body:not(.light-theme) {
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.08) 0%, transparent 40%),
+    linear-gradient(rgba(15, 23, 42, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.3) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+}
+
+body.light-theme {
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.03) 0%, transparent 40%),
+    linear-gradient(rgba(229, 231, 235, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(229, 231, 235, 0.5) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+}
+
+/* Custom Theme Helpers */
+.bg-theme-primary {
+  background-color: var(--bg-primary) !important;
+}
+.bg-theme-card {
+  background-color: var(--bg-card) !important;
+}
+.bg-theme-card-solid {
+  background-color: var(--bg-card-solid) !important;
+}
+.text-theme-primary {
+  color: var(--text-primary) !important;
+}
+.text-theme-secondary {
+  color: var(--text-secondary) !important;
+}
+.border-theme {
+  border-color: var(--border-color) !important;
+}
+.shadow-theme {
+  box-shadow: var(--card-shadow) !important;
+}
+
+/* Futuristic Font Classes */
+.font-orbitron {
+  font-family: 'Orbitron', monospace;
+}
+
+/* Custom Cyber Glow Shadows */
+.cyber-glow-indigo {
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.35);
+}
+
+.cyber-glow-cyan {
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.35);
+}
+
+.cyber-glow-rose {
+  box-shadow: 0 0 15px rgba(244, 63, 94, 0.35);
+}
+
+/* Neon Glassmorphism Panel */
+.cyber-panel {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+}
+
+.cyber-panel-hover:hover {
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Custom Sci-fi themed Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.3);
+  border-radius: 99px;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.6);
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.8);
+}
+
+/* Micro-animations */
+@keyframes cyberPulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.cyber-pulse {
+  animation: cyberPulse 2s infinite ease-in-out;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.cyber-scanline::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
