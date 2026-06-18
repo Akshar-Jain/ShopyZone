@@ -18,12 +18,7 @@ if (process.env.DATABASE_URL && !process.env.DATABASE_URL.includes('[YOUR-PASSWO
     logging: false,
   });
 } else {
-  console.log('DATABASE_URL is not set. Falling back to local SQLite database (shopyzone.db)...');
-  sequelize = new Sequelize({
-    dialect: 'sqlite',
-    storage: './shopyzone.db',
-    logging: false,
-  });
+  throw new Error('DATABASE_URL environment variable is missing or contains placeholder [YOUR-PASSWORD]. Direct connection to Supabase PostgreSQL is required.');
 }
 
 export default sequelize;
