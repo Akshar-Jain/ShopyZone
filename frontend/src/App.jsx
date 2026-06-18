@@ -29,22 +29,7 @@ import AdminDashboard from './pages/AdminDashboard.jsx';
 import FAQ from './pages/FAQ.jsx';
 import Contact from './pages/Contact.jsx';
 import VerifyingPage from './pages/VerifyingPage.jsx';
-
-// Google OAuth Callback Handler
-const AuthCallback = () => {
-  const navigate = useNavigate();
-  useEffect(() => {
-    setTimeout(() => navigate('/'), 1500);
-  }, []);
-  return (
-    <div className="flex items-center justify-center min-h-screen bg-slate-50">
-      <div className="text-center space-y-3">
-        <div className="w-10 h-10 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin mx-auto"></div>
-        <p className="text-slate-500 text-sm font-medium">Logging you in with Google...</p>
-      </div>
-    </div>
-  );
-};
+import AuthCallback from './pages/AuthCallback.jsx';
 
 function App() {
   return (
