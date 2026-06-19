@@ -421,7 +421,6 @@ const Layout = () => {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-theme/20 text-center text-[10px] uppercase font-bold tracking-wider text-theme-secondary">
           <p>© {new Date().getFullYear()} ShopyZone E-Commerce. Synchronized with database.</p>
-          <p className="mt-1.5 normal-case font-semibold text-slate-400 tracking-wide text-xs">Made with ❤️ by Chikku😊</p>
         </div>
       </footer>
     </div>
